@@ -1,0 +1,209 @@
+$primary : #FFDBB5;
+$secondary: #E0A458;
+$add:#419D78;
+$custom:#C04ABC;
+$dark:#2d3047;
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+h1,h2,h3{
+  text-transform: uppercase;
+  font-size: 2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+p,li{
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+section{
+  background-color: $primary;
+  header{
+    background-color: $add;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    h1,h2{
+      font-size: 3em;
+      margin-block: 20px;
+    }
+    .header-content{
+      color: white;
+      max-width: 700px;
+    }
+    @media (max-width:768px) {
+      height: 50vh;
+      .header-content{
+        max-width: 500px;
+      }
+      h1,h2{
+        font-size: 2em;
+        margin-block: 10px;
+      }
+
+    }
+  }
+  .preamble{
+    padding-block: 25px; 
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    @media (max-width:768px) {
+      padding-block: 0; 
+      // height: 50vh;
+    }
+  }
+
+}
+.main{
+  @media (min-width:768px) {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: 
+    "a a b b"
+    "c c b b";
+  }
+  .explanation{
+    background-color: $secondary;
+    color: white;
+    grid-area: a;
+    &-content{
+      padding-block: 25px; 
+      width: 90%;
+      margin-inline: auto;
+    }
+    
+  }
+  .participation{
+    padding: 20px 10px;
+    background-color: $dark;
+    color: white;
+    grid-area: b;
+    &-content{
+      padding-block: 50px; 
+      width: 90%;
+      margin-inline: auto;
+    }
+  }
+  .benefits{
+    background-color: $custom;
+    color: white;
+    grid-area: c;
+    &-content{
+      padding-block: 25px; 
+      width: 90%;
+      margin-inline: auto;
+
+    }
+  }
+  .requirements{
+    background-color: $primary;
+    grid-column: span 4;
+    &-content{
+      padding-block: 50px; 
+      width: 90%;
+      margin-inline: auto;
+    }
+  }
+}
+// footer{
+//   text-align: center;
+//   padding-block: 20px;
+//   // background-color: $dark;
+//   // top: 50px;
+//   transform: rotate(-90deg);
+
+//   grid-column: span 4;
+//   position: absolute;
+//   a{
+//     text-decoration: none;
+//     color: white;
+//   }
+// }
+.sidebar{
+  background-color: $secondary;
+  padding: 50px 0;
+  color: $dark;
+  @media (min-width:768px) {
+    padding: 0 0;
+    padding-bottom: 50px;
+    background-color: $add;
+
+  }
+  .items>h1{
+    display: none;
+  }
+  h3{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .wrapper{
+    padding-block: 0; 
+    width: 90%;
+    margin-inline: auto;
+    @media (min-width:768px) {
+      padding-block: 0px; 
+      width: 100%;
+      color: white;
+      li{
+        list-style: none;
+      }
+      .items>h1{
+        display: block;
+      }
+      .design-selection{
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        .select{
+          padding: 20px;
+          background-color: $dark;
+        }
+        ul{
+          padding: 0;
+          margin: 0;
+          display: grid;
+          grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+          grid-template-rows: repeat(2, 1fr);
+          // gap: 50px;
+          li{
+            padding: 50px;
+          }
+          li:nth-child(even){
+            background-color: $dark;
+          }
+          li:nth-child(odd){
+            background-color: $add;
+          }
+        }
+        
+      }
+      .sidebar-2{
+        margin-top: 100px;
+        grid-column: span -1;
+        display: flex;
+        justify-content: space-evenly;
+        ul{
+          margin: 0;
+        }
+        .design-archives{
+          display: flex;
+        }
+        .zen-resources{
+          display: flex;
+        }
+      }
+    } 
+  }
+  
+}
+
